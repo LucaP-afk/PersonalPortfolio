@@ -1,0 +1,597 @@
+* {
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-snap-type: y mandatory; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    background-color: rgb(26, 25, 25);
+    
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+header {
+    background-color: rgb(226, 148, 4);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 414px) {
+    .logo {
+        font-size: 25px;
+        margin-left: 30px;
+    }
+}
+@media only screen and (max-width: 305px) {
+    .logo {
+        font-size: 20px;
+        margin-left: 45px;
+    }
+}
+
+#navBarToggle {
+    display: none;
+}
+
+.navBarToggleLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navBarToggleLabel span,
+.navBarToggleLabel span::before,
+.navBarToggleLabel span::after {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.navBarToggleLabel span::before,
+.navBarToggleLabel span::after {
+    content: '';
+    position: absolute;
+}
+
+.navBarToggleLabel span::before {
+    bottom: 9px;
+}
+
+.navBarToggleLabel span::after {
+    top: 9px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: inherit;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: black;
+}
+
+#navBarToggle:checked ~ nav {
+    transform: scale(1, 1);
+}
+
+#navBarToggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 900px) {
+    .navBarToggleLabel {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transform-origin: left;
+        transition: ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+}
+
+.description {
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 4.5vw;
+    position: absolute;
+    border-left: 3px solid red;
+    top: 50%;
+    left: 15%;
+    width: 85%;
+    padding-left: 5%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 900px) {
+    .description {
+        font-size: 6vw;
+    }
+}
+
+.typing {
+    color: rgb(102, 252, 169);
+}
+
+.line {
+    animation: blink 1s step-start 0s infinite;
+    -webkit-animation: blink 1s step-start 0s infinite;
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.projectContainer {
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 120%;
+    overflow: hidden;
+}
+
+.projectContainer a {
+    text-decoration: none;
+    display: flex;
+    margin: 0 40px;
+}
+
+.projectBox {
+    width: 200px;
+    height: 350px;
+    overflow: hidden;
+    color: white;
+}
+
+.projectPhoto {
+    width: 200px;
+    height: 170px;
+    border-radius: 15px;
+    border: 3px solid black;
+}
+
+.projectBox h1 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.projectBox p {
+    text-align: justify;
+    margin: 0 5px;
+    font-size: 13px;
+    margin-top: -10px;
+}
+
+.skillUsed {
+    max-width: 40px;
+    max-height: 40px;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .projectContainer a {
+        margin: 0 3%;
+    }
+}
+@media only screen and (max-width: 740px) {
+    .projectContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .projectContainer a {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .projectBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 170px;
+        width: 80%;
+    }
+    .descriptionProject {
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 20px;
+    }
+    .descriptionProject h1 {
+        margin-left: 5px;
+        margin-top: -4px;
+        text-align: start;
+    }
+    .projectSkill {
+        display: flex;
+        justify-content: center;
+        margin-top: -10px;
+    }
+    .projectPhoto {
+        width: 160px;
+        height: 130px;
+    }
+}
+@media only screen and (max-width: 529px) {
+    .projectContainer a {
+        display: flex;
+    }
+    .descriptionProject p {
+        display: none;
+    }
+    .descriptionProject {
+        margin-left: 10px;
+    }
+    .projectPhoto {
+        width: 130px;
+        height: 110px;
+        margin-left: 6%;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .projectBox {
+        height: 135px;
+    }
+    .projectSkill {
+        margin-top: -20px;
+    }
+    .projectPhoto {
+        width: 120px;
+        height: 110px;
+        margin-left: 0;
+    }
+    .skillUsed {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.skillContainer {
+    width: 80%;
+    height: 60vh;
+    position: absolute;
+    top: 220%;
+    left: 50%;
+    margin-left: -40%;
+    flex-direction: column;
+}
+
+.skillTitle {
+    width: 100%;
+    height: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.redLine {
+    width: 15%;
+    height: 56px;
+    border-bottom: 4px solid red;
+    margin: 0 20px;
+}
+
+.skillBox {
+    height: 50vh;
+    overflow: hidden;
+}
+
+.firstLine,
+.secondLine {
+    display: flex;
+    width: 702px;
+    margin: 20px auto;
+}
+
+.skillBox img {
+    width: 130px;
+    height: 130px;
+    margin: 5px;
+}
+
+.skillBox img:hover {
+    border: 4px solid black;
+}
+
+@media only screen and (max-width: 900px) {
+    .firstLine,
+    .secondLine {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .skillBox img {
+        width: 18%;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 610px) {
+    .redLine {
+        width: 10%;
+    }
+    .skillTitle h1 {
+        font-size: 30px;
+        margin-top: 35px;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .skillTitle h1 {
+        margin-top: 20px;
+    }
+    .redLine {
+        width: 40px;
+        height: 2px;
+    }
+    .skillTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    }
+    .skillBox {
+        margin-top: 50px;
+    }
+    .skillBox img {
+        width: 16%;
+        height: auto;
+    }
+}
+
+#about {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutContainer {
+    display: flex;
+    width: 80%;
+    height: 380px;
+}
+
+.aboutImage {
+    width: 380px;
+    height: 100%;
+    margin-top: 35px;
+}
+
+.aboutImage img {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.aboutText {
+    color: white;
+    width: 60%;
+    min-width: 370px;
+    max-width: 570px;
+    height: 380px;
+    margin-left: 20px;
+    font-family: 'Roboto Slab', serif;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.aboutText h1 {
+    color: red;
+}
+
+@media only screen and (max-width: 900px) {
+    .aboutText {
+        font-size: 18px;
+    }
+    .aboutImage img {
+        width: 250px;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 743px) {
+    .aboutContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutContainer h1 {
+        display: none;
+    }
+    .aboutImage {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: -40px;
+    }
+    .aboutImage img {
+        border-radius: 0;
+    }
+    .aboutText {
+        width: 100%;
+        margin-top: 30px;
+        margin-left: 0;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .aboutText {
+        border: 3px solid rgba(128, 128, 128, 0.459);
+        border-radius: 10px;
+        padding: 0 15px;
+        overflow-y: scroll;
+        min-height: 250px;
+        min-width: 94%;
+    }
+    .aboutImage img {
+        width: 250px;
+        height: auto;
+    }
+}
+@media only screen and (max-height: 580px) {
+    .aboutText {
+        min-height: 200px;
+    }
+    .aboutImage img {
+        width: 200px;
+        height: auto;
+        margin-top: 50px;
+    }
+}
+
+#contact {
+    height: 300px;
+    color: white;
+    background-color: rgb(4, 65, 65);
+}
+
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 300px;
+    width: 100%;
+    padding-top: 5px;
+    line-height: 25px;
+}
+
+.contactContainer h3 {
+    color: white;
+}
+
+.dataContainer ul,
+.socialContainer ul {
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.socialContainer ul li {
+    display: inline;
+}
+
+.socialContainer ul li:hover {
+    filter: brightness(120%);
+}
+
+.contact-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
