@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <title>Luca Pignorio | Portfolio</title>
+        <link rel='stylesheet' href='styles.css'>
+        <link rel='shortcut icon' href='images/logo.ico'>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto+Slab&display=swap');</style>
+    </head>
+    <body>
+        <section id='home'>
+            <header>
+                <h1 class='logo'>LUCA PIGNORIO</h1>
+                <input type="checkbox" id="navBarToggle">
+                <nav>
+                    <ul>
+                        <li><a href='#home'>Home</a></li>
+                        <li><a href='#works'>Works</a></li>
+                        <li><a href='#skill'>Skill</a></li>
+                        <li><a href='#about'>About</a></li>
+                        <li><a href='#contact'>Contact</a></li>
+                    </ul>
+                </nav>
+                <label for='navBarToggle' class='navBarToggleLabel'>
+                    <span></span>
+                </label>
+            </header>
+            <h1 class='description'>
+                Hi, my name is Luca 
+                <br>and I'm a <span style='color:rgb(255, 185, 55)'>web developer</span>. 
+                <br>I'm <span class='typing'></span><span class='line'>|</span>
+            </h1>
+        </section>
+
+        <section id='works'>
+            <div class='projectContainer'>
+                <a href='https://aqipignorio.web.app' target="_blank">
+                    <div class='projectBox'>   
+                        <img class='projectPhoto' src='images/projects/airQualityIndex.png'>
+                        <div class='descriptionProject'>
+                            <h1>Air Quality Index</h1>
+                            <p>Site that monitors air pollution levels thanks to the use of APIs.</p>
+                            <div class='projectSkill'>
+                                <img class='skillUsed' src='images/skill/hardSkill/css.jpg'>
+                                <img class='skillUsed' src='images/skill/hardSkill/html.jpg'>
+                                <img class='skillUsed' src='images/skill/hardSkill/js.png'>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='https://searcher-react.web.app' target="_blank">
+                    <div class='projectBox'>
+                        <img class='projectPhoto' src='images/projects/bookSearcher.png'>
+                        <div class='descriptionProject'>
+                            <h1>Book Searcher</h1>
+                            <p>Site to search for books using the Google Books API made with React.</p>
+                            <div class='projectSkill'>
+                                <img class='skillUsed' src='images/skill/hardSkill/html.jpg'>
+                                <img class='skillUsed' src='images/skill/hardSkill/css.jpg'>
+                                <img class='skillUsed' src='images/skill/hardSkill/js.png'>
+                                <img class='skillUsed' src='images/skill/hardSkill/react.jpg'>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href='https://projects-page-b8c4e.web.app' target="_blank">
+                    <div class='projectBox'>
+                        <img class='projectPhoto' src='images/projects/projectPage.png'>
+                        <div class='descriptionProject'>
+                            <h1>Projects Page</h1>
+                            <p>A React page with some of the projects I realized to practice my React skills.</p>  
+                            <div class='projectSkill'>        
+                            <img class='skillUsed' src='images/skill/hardSkill/html.jpg'>
+                            <img class='skillUsed' src='images/skill/hardSkill/css.jpg'>
+                            <img class='skillUsed' src='images/skill/hardSkill/js.png'>
+                            <img class='skillUsed' src='images/skill/hardSkill/react.jpg'>
+                            </div> 
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id='skill'>
+            <div class='skillContainer'>
+                <div class='skillTitle'>
+                    <div class='redLine'></div>
+                    <h1>HARD SKILLS</h1>
+                    <div class='redLine'></div>
+                </div>
+                <div class='skillBox'>
+                    <div class='firstLine'>
+                        <img src='images/skill/hardSkill/html.jpg'>
+                        <img src='images/skill/hardSkill/css.jpg'>
+                        <img src='images/skill/hardSkill/js.png'>
+                        <img src='images/skill/hardSkill/react.jpg'>
+                        <img src='images/skill/hardSkill/jquery.jpg'>
+                    </div>
+                    <div class='secondLine'>
+                        <img src='images/skill/hardSkill/github.png'>
+                        <img src='images/skill/hardSkill/b2.png'>
+                        <img src='images/skill/hardSkill/excel.png'>
+                        <img src='images/skill/hardSkill/powerpoint.jpg'>
+                        <img src='images/skill/hardSkill/word.png'>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id='about'>
+            <div class='aboutContainer'>
+                <div class='aboutImage'>
+                    <img src="images/profile/me.jpg">
+                </div>
+                <div class='aboutText'>
+                    <h1>ABOUT ME</h1>
+                    <p>Hi there! My name is Luca, I'm 26 and I live in Rome. I've a master's degree in marketing but computer science is my real passion. 
+                    For this reason, I decided to start a course to became a web developer. <br/>
+                    I'm a dinamic and curious person and I like to challange myself with logical reasoning tests everyday.
+                    I really like travelling and doing outdoor activities.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id='contact'>
+            <div class='contactContainer'>
+                <div class='dataContainer'>
+                    <h3>Contact:</h3>
+                    <ul>
+                        <li>email: <a class='contact-link' href='mailto:luca.pignorio@hotmail.com'>luca.pignorio@hotmail.com</a></li>
+                        <li>cell: <a class='contact-link' href='tel:+393496969079'>+39 3496969079</a></li>
+                    </ul>
+                </div>
+                <div class='socialContainer'>
+                    <ul>
+                        <li><a href='https://www.facebook.com/luca.pignorio/' target='_blank'><img src='images/social/facebook.png' alt='Facebook'></a></li>
+                        <li><a href='https://www.instagram.com/pigno15/' target="_blank"><img src='images/social/instagram.png' alt='Instagram'></a></li>
+                        <li><a href="https://twitter.com/Pigno7" target='_blank'><img src="images/social/twitter.png" alt='Twitter'></a></li>
+                        <li><a href="https://www.linkedin.com/in/luca-pignorio/" target="_blank"><img src="images/social/linkedin.png" alt='Linkedin'></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <script src='script.js'></script>
+    </body>
+</html>
